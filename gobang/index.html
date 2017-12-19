@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原生ES6写五子棋</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="info"></div>
+    <div id="root"></div>
+    <script src="index.js"></script>
+    <script>
+        // 初始化游戏，（棋盘大小，{结束事件，落子事件}）
+        Game.start(15,{
+            onEnd(color) {
+                alert(`游戏结束, ${color === 1 ? '白棋' : '黑棋'}胜利`)
+            },
+            onKeep(color) {
+                document.getElementById('info').innerHTML = `${color !== 1 ? '白棋' : '黑棋'}下棋`
+            }
+        })
+    </script>
+</body>
+</html>
